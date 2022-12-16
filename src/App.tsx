@@ -6,7 +6,6 @@ import { withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css"; // 認証画面用のCSS
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
-Auth.configure(awsExports);
 
 function App({ signOut, user }: any) {
   return (
@@ -26,5 +25,5 @@ function App({ signOut, user }: any) {
     </div>
   );
 }
-
+Auth.configure(awsExports);
 export default withAuthenticator(App);
